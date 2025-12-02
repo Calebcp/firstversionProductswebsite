@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Flip Cards</title>
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Header/Footer */
+        header, footer {
+            background: #2c3e50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            font-size: 0.9rem;
+        }
+
+        /* Product Section */
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 3rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Flip Card Container */
+        .product-card {
+            height: 300px;
+            perspective: 1000px; /* 3D Effect */
+            cursor: pointer;
+        }
+
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .product-card.flipped .card-inner {
+            transform: rotateY(180deg); /* Flip */
+        }
+
+        /* Front/Back of Card */
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden; /* Hide back when front is visible */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        .card-front {
+            background: #3498db;
+            color: white;
+        }
+
+        .card-back {
+            background: #2ecc71;
+            color: white;
+            transform: rotateY(180deg); /* Flip back by default */
+        }
+
+        /* Product Icon */
+        .product-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Link Card Style (visual cue) */
+        .link-card .card-front {
+            background: #e67e22;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Our Products</h1>
+    </header>
+
+    <!-- Product Section -->
+    <section class="products">
+        <!-- Flip Card (Reveal Info) -->
+        <div class="product-card" data-type="flip">
+            <div class="card-inner">
+                <div class="card-front">
+                    <div class="product-icon">📱</div>
+                    <h3>Smartphone</h3>
+                </div>
+                <div class="card-back">
+                    <h3>Smartphone Details</h3>
+                    <p>6.7" Display | 128GB Storage | 50MP Camera</p>
+                    <p>Price: $699</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Link Card (New Tab) -->
+        <div class="product-card link-card" data-type="new-tab" data-target="https://example.com/laptop-details">
+            <div class="card-inner">
+                <div class="card-front">
+                    <div class="product-icon">💻</div>
+                    <h3>Laptop</h3>
+                </div>
+                <div class="card-back">
+                    <h3>Click to View Full Specs</h3>
+                    <p>16GB RAM | 512GB SSD | Intel i7</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Flip Card (Reveal Info) -->
+        <div class="product-card" data-type="flip">
+            <div class="card-inner">
+                <div class="card-front">
+                    <div class="product-icon">⌚</div>
+                    <h3>Smart Watch</h3>
+                </div>
+                <div class="card-back">
+                    <h3>Smart Watch Details</h3>
+                    <p>Heart Rate | GPS | 7-Day Battery</p>
+                    <p>Price: $299</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Link Card (In-Page Navigation) -->
+        <div class="product-card link-card" data-type="in-page" data-target="#tablet-facts">
+            <div class="card-inner">
+                <div class="card-front">
+                    <div class="product-icon">📙</div>
+                    <h3>Tablet</h3>
+                </div>
+                <div class="card-back">
+                    <h3>Click for More Facts</h3>
+                    <p>10.9" Screen | 8GB RAM</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- In-Page Section (for Tablet Facts) -->
+    <section id="tablet-facts" style="padding: 2rem; max-width: 800px; margin: 0 auto; display: none;">
+        <h2>Tablet Full Facts</h2>
+        <ul>
+            <li>OS: Android 14 / iOS 17</li>
+            <li>Battery: 10,000 mAh</li>
+            <li>Storage: 64GB/128GB/256GB</li>
+            <li>Price: $399-$599</li>
+        </ul>
+        <button onclick="document.getElementById('tablet-facts').style.display='none'">Close</button>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        © 2025 Our Product Store | All Rights Reserved
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Get all product cards
+        const productCards = document.querySelectorAll('.product-card');
+
+        // Add click handlers to each card
+        productCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const type = card.dataset.type;
+                const target = card.dataset.target;
+
+                // Flip card (reveal info)
+                if (type === 'flip') {
+                    card.classList.toggle('flipped');
+                }
+
+                // Open new tab
+                else if (type === 'new-tab') {
+                    window.open(target, '_blank');
+                }
+
+                // In-page navigation
+                else if (type === 'in-page') {
+                    document.querySelector(target).style.display = 'block';
+                    document.querySelector(target).scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
