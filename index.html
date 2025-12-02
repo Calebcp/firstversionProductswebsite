@@ -1,207 +1,315 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Flip Cards</title>
+    <title>产品翻牌 - 国风设计</title>
     <style>
-        /* Base Styles */
+        /* Base Styles - Chinese Aesthetic Foundation */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
+            font-family: "Ma Shan Zheng", "SimHei", "Microsoft YaHei", Arial, sans-serif;
         }
 
-        /* Header/Footer */
+        body {
+            background-color: #f8f5f0;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23d9c8b4' fill-opacity='0.2' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+
+        /* Translation Button - Fixed Top Right */
+        .translate-btn {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background: #8b0000;
+            color: #ffd700;
+            border: 2px solid #b8860b;
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            z-index: 9999; /* Stay above all elements */
+            transition: background 0.3s ease;
+        }
+        .translate-btn:hover {
+            background: #cd5c5c;
+        }
+
+        /* Header/Footer - Chinese Red + Gold Accent */
         header, footer {
-            background: #2c3e50;
-            color: white;
-            padding: 1rem;
+            background: #8b0000;
+            color: #ffd700;
+            padding: 1.5rem;
             text-align: center;
+            border-bottom: 3px solid #b8860b;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
-
+        header {
+            padding-top: 4rem; /* Make space for translation button */
+        }
+        header h1 {
+            font-size: 2.2rem;
+            letter-spacing: 0.2rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
         footer {
             position: fixed;
             bottom: 0;
             width: 100%;
-            font-size: 0.9rem;
+            font-size: 1rem;
+            border-top: 3px solid #b8860b;
+            background: #8b0000;
         }
 
-        /* Product Section */
+        /* Product Section - Spacing for Elegance */
         .products {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            padding: 3rem 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            padding: 4rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
         }
 
-        /* Flip Card Container */
+        /* Flip Card Container - Rounded like Chinese Fans */
         .product-card {
-            height: 300px;
-            perspective: 1000px; /* 3D Effect */
+            height: 320px;
+            perspective: 1200px;
             cursor: pointer;
+            filter: drop-shadow(0 5px 8px rgba(0,0,0,0.2));
         }
-
         .card-inner {
             position: relative;
             width: 100%;
             height: 100%;
-            transition: transform 0.6s;
+            transition: transform 0.8s ease;
             transform-style: preserve-3d;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            border-radius: 12px;
         }
-
         .product-card.flipped .card-inner {
-            transform: rotateY(180deg); /* Flip */
+            transform: rotateY(180deg);
         }
 
-        /* Front/Back of Card */
+        /* Front/Back of Card - Traditional Color Palette */
         .card-front, .card-back {
             position: absolute;
             width: 100%;
             height: 100%;
-            backface-visibility: hidden; /* Hide back when front is visible */
+            backface-visibility: hidden;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 1rem;
-            border-radius: 8px;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 2px solid #b8860b;
         }
-
         .card-front {
-            background: #3498db;
-            color: white;
+            background: linear-gradient(135deg, #006400 0%, #556b2f 100%);
+            color: #fff;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
         }
-
-        .card-back {
-            background: #2ecc71;
-            color: white;
-            transform: rotateY(180deg); /* Flip back by default */
-        }
-
-        /* Product Icon */
-        .product-icon {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-        }
-
-        /* Link Card Style (visual cue) */
         .link-card .card-front {
-            background: #e67e22;
+            background: linear-gradient(135deg, #cd5c5c 0%, #8b0000 100%);
+        }
+        .card-back {
+            background: #f8f5f0;
+            color: #222;
+            transform: rotateY(180deg);
+            border: 2px solid #8b4513;
+        }
+
+        /* Product Icon - Larger, More Prominent */
+        .product-icon {
+            font-size: 5rem;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(2px 2px 3px rgba(0,0,0,0.3));
+        }
+
+        /* Text Styling - Calligraphy Inspired */
+        .card-front h3, .card-back h3 {
+            font-size: 1.8rem;
+            letter-spacing: 0.15rem;
+            margin-bottom: 0.5rem;
+        }
+        .card-back p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            text-align: center;
+            margin: 0.3rem 0;
+        }
+
+        /* In-Page Section - Chinese Aesthetic */
+        #tablet-facts {
+            padding: 2.5rem;
+            max-width: 800px;
+            margin: 2rem auto;
+            background: #f8f5f0;
+            border: 2px solid #b8860b;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            display: none;
+        }
+        #tablet-facts h2 {
+            color: #8b0000;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            letter-spacing: 0.1rem;
+        }
+        #tablet-facts ul {
+            list-style: none;
+            padding-left: 0;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        #tablet-facts li::before {
+            content: "●";
+            color: #8b0000;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+        #tablet-facts button {
+            background: #8b0000;
+            color: #ffd700;
+            border: none;
+            padding: 0.8rem 2rem;
+            font-size: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 1.5rem;
+            font-family: "Microsoft YaHei", sans-serif;
+            transition: background 0.3s ease;
+        }
+        #tablet-facts button:hover {
+            background: #cd5c5c;
         }
     </style>
+    <!-- Import Chinese Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap">
 </head>
 <body>
-    <!-- Header -->
+    <!-- Translation Toggle Button (Top Right) -->
+    <button class="translate-btn" id="translateBtn">Switch to English</button>
+
+    <!-- Header (Dual Language Data Attributes) -->
     <header>
-        <h1>Our Products</h1>
+        <h1 data-zh="吾店产品 · 国风甄选" data-en="Our Products · Guofeng Selection">吾店产品 · 国风甄选</h1>
     </header>
 
-    <!-- Product Section -->
+    <!-- Product Section (Dual Language Data Attributes) -->
     <section class="products">
-        <!-- Flip Card (Reveal Info) -->
+        <!-- Flip Card (Smartphone) -->
         <div class="product-card" data-type="flip">
             <div class="card-inner">
                 <div class="card-front">
                     <div class="product-icon">📱</div>
-                    <h3>Smartphone</h3>
+                    <h3 data-zh="智能手机" data-en="Smartphone">智能手机</h3>
                 </div>
                 <div class="card-back">
-                    <h3>Smartphone Details</h3>
-                    <p>6.7" Display | 128GB Storage | 50MP Camera</p>
-                    <p>Price: $699</p>
+                    <h3 data-zh="手机详情" data-en="Smartphone Details">手机详情</h3>
+                    <p data-zh="6.7英寸高清屏 | 128GB存储 | 5000万像素摄像头" data-en="6.7'' HD Display | 128GB Storage | 50MP Camera">6.7英寸高清屏 | 128GB存储 | 5000万像素摄像头</p>
+                    <p data-zh="售价：¥4999" data-en="Price: $699">售价：¥4999</p>
                 </div>
             </div>
         </div>
 
-        <!-- Link Card (New Tab) -->
+        <!-- Link Card (Laptop) -->
         <div class="product-card link-card" data-type="new-tab" data-target="https://example.com/laptop-details">
             <div class="card-inner">
                 <div class="card-front">
                     <div class="product-icon">💻</div>
-                    <h3>Laptop</h3>
+                    <h3 data-zh="笔记本电脑" data-en="Laptop">笔记本电脑</h3>
                 </div>
                 <div class="card-back">
-                    <h3>Click to View Full Specs</h3>
-                    <p>16GB RAM | 512GB SSD | Intel i7</p>
+                    <h3 data-zh="点击查看完整参数" data-en="Click to View Full Specs">点击查看完整参数</h3>
+                    <p data-zh="16GB内存 | 512GB固态硬盘 | 英特尔i7处理器" data-en="16GB RAM | 512GB SSD | Intel i7 Processor">16GB内存 | 512GB固态硬盘 | 英特尔i7处理器</p>
                 </div>
             </div>
         </div>
 
-        <!-- Flip Card (Reveal Info) -->
+        <!-- Flip Card (Smart Watch) -->
         <div class="product-card" data-type="flip">
             <div class="card-inner">
                 <div class="card-front">
                     <div class="product-icon">⌚</div>
-                    <h3>Smart Watch</h3>
+                    <h3 data-zh="智能手表" data-en="Smart Watch">智能手表</h3>
                 </div>
                 <div class="card-back">
-                    <h3>Smart Watch Details</h3>
-                    <p>Heart Rate | GPS | 7-Day Battery</p>
-                    <p>Price: $299</p>
+                    <h3 data-zh="手表详情" data-en="Smart Watch Details">手表详情</h3>
+                    <p data-zh="心率监测 | 卫星定位 | 7天续航" data-en="Heart Rate | GPS | 7-Day Battery">心率监测 | 卫星定位 | 7天续航</p>
+                    <p data-zh="售价：¥2199" data-en="Price: $299">售价：¥2199</p>
                 </div>
             </div>
         </div>
 
-        <!-- Link Card (In-Page Navigation) -->
+        <!-- Link Card (Tablet) -->
         <div class="product-card link-card" data-type="in-page" data-target="#tablet-facts">
             <div class="card-inner">
                 <div class="card-front">
                     <div class="product-icon">📙</div>
-                    <h3>Tablet</h3>
+                    <h3 data-zh="平板电脑" data-en="Tablet">平板电脑</h3>
                 </div>
                 <div class="card-back">
-                    <h3>Click for More Facts</h3>
-                    <p>10.9" Screen | 8GB RAM</p>
+                    <h3 data-zh="点击查看更多详情" data-en="Click for More Facts">点击查看更多详情</h3>
+                    <p data-zh="10.9英寸全面屏 | 8GB运行内存" data-en="10.9'' Full Screen | 8GB RAM">10.9英寸全面屏 | 8GB运行内存</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- In-Page Section (for Tablet Facts) -->
-    <section id="tablet-facts" style="padding: 2rem; max-width: 800px; margin: 0 auto; display: none;">
-        <h2>Tablet Full Facts</h2>
+    <!-- In-Page Section (Tablet Facts - Dual Language) -->
+    <section id="tablet-facts">
+        <h2 data-zh="平板电脑完整参数" data-en="Tablet Full Facts">平板电脑完整参数</h2>
         <ul>
-            <li>OS: Android 14 / iOS 17</li>
-            <li>Battery: 10,000 mAh</li>
-            <li>Storage: 64GB/128GB/256GB</li>
-            <li>Price: $399-$599</li>
+            <li data-zh="操作系统：安卓14 / iOS 17" data-en="OS: Android 14 / iOS 17">操作系统：安卓14 / iOS 17</li>
+            <li data-zh="电池容量：10000毫安" data-en="Battery: 10,000 mAh">电池容量：10000毫安</li>
+            <li data-zh="存储容量：64GB/128GB/256GB" data-en="Storage: 64GB/128GB/256GB">存储容量：64GB/128GB/256GB</li>
+            <li data-zh="售价：¥2999-¥4199" data-en="Price: $399-$599">售价：¥2999-¥4199</li>
         </ul>
-        <button onclick="document.getElementById('tablet-facts').style.display='none'">Close</button>
+        <button onclick="document.getElementById('tablet-facts').style.display='none'" data-zh="关闭" data-en="Close">关闭</button>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer (Dual Language) -->
     <footer>
-        © 2025 Our Product Store | All Rights Reserved
+        <p data-zh="© 2025 国风产品馆 | 保留所有权利" data-en="© 2025 Guofeng Product Hall | All Rights Reserved">© 2025 国风产品馆 | 保留所有权利</p>
     </footer>
 
-    <!-- JavaScript -->
+    <!-- JavaScript (Translation + Original Functionality) -->
     <script>
-        // Get all product cards
-        const productCards = document.querySelectorAll('.product-card');
+        // Translation Logic
+        const translateBtn = document.getElementById('translateBtn');
+        let isChinese = true; // Default language
 
-        // Add click handlers to each card
+        // Toggle language on button click
+        translateBtn.addEventListener('click', () => {
+            isChinese = !isChinese;
+            const elements = document.querySelectorAll('[data-zh], [data-en]');
+            
+            // Update all text elements
+            elements.forEach(el => {
+                el.textContent = isChinese ? el.dataset.zh : el.dataset.en;
+            });
+            
+            // Update button text
+            translateBtn.textContent = isChinese ? "Switch to English" : "切换到中文";
+        });
+
+        // Original Flip/Link Functionality (Unchanged)
+        const productCards = document.querySelectorAll('.product-card');
         productCards.forEach(card => {
             card.addEventListener('click', () => {
                 const type = card.dataset.type;
                 const target = card.dataset.target;
-
-                // Flip card (reveal info)
                 if (type === 'flip') {
                     card.classList.toggle('flipped');
-                }
-
-                // Open new tab
-                else if (type === 'new-tab') {
+                } else if (type === 'new-tab') {
                     window.open(target, '_blank');
-                }
-
-                // In-page navigation
-                else if (type === 'in-page') {
+                } else if (type === 'in-page') {
                     document.querySelector(target).style.display = 'block';
                     document.querySelector(target).scrollIntoView({ behavior: 'smooth' });
                 }
