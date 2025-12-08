@@ -1,81 +1,170 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chinese Aesthetic Multi-Page</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Beijing Central Axis — Landing</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Montserrat:wght@300;600&display=swap"
+rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <!-- SIDE DOTS -->
-  <div class="side-nav">
-    <div class="dot active"></div>
-    <div class="dot"></div>
-    <div class="dot"></div>
-    <div class="dot"></div>
-    <div class="dot"></div>
+  <!-- Sticky header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <!-- Replace with your logo image if you have one -->
+        <img src="images/12/1/logo-with-text.png"  alt="Beijing Central Axis logo" class="logo">
+        <div class="brand-text">
+          <div class="chinese">北京中轴线</div>
+          <div class="english">BEIJING CENTRAL AXIS</div>
+        </div>
+      </div>
+
+      <nav class="top-nav" aria-label="Primary">
+        <a href="#section-1">BIT Stuff</a>
+        <a href="#section-2">BIT Stuff</a>
+        <a href="#section-3">BIT Stuff</a>
+        <a href="#section-4">BIT Stuff</a>
+        <a href="#section-5">BIT Stuff</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Dot navigation -->
+  <div class="dot-nav" aria-hidden="false">
+    <button class="dot active" data-target="section-1" aria-label="Go to section 1"></button>
+    <button class="dot" data-target="section-2" aria-label="Go to section 2"></button>
+    <button class="dot" data-target="section-3" aria-label="Go to section 3"></button>
+    <button class="dot" data-target="section-4" aria-label="Go to section 4"></button>
+    <button class="dot" data-target="section-5" aria-label="Go to section 5"></button>
   </div>
 
-  <!-- PAGE 1 -->
-  <section class="page page1 active">
-    <div class="text-panel">
-        <h1 class="title-cn">Project...</h1>
-    <h2 class="subtitle-en">Welcome</h2>
-    <p class="desc">
-      A test to see what it is like.
-    </p>
-    </div>
-  </section>
+  <main>
 
-  <!-- PAGE 2 -->
-  <section class="page page2 inactive">
-    <div class="text-panel">
-        <h1 class="title-main">About</h1>
-    <div class="divider"></div>
-    <p class="desc">
-      This page describes the purpose of the site.  
-      Replace this with your actual story or content.
-    </p>
-    </div>
-  </section>
+    <!-- SECTION 1: Hero (Header + big image) -->
+    <section id="section-1" class="section hero">
+      <div class="hero-image" role="img" aria-label="Historic gate at night (hero image)">
+        <!-- Replace hero.jpg with your actual hero banner image -->
+        <img src="images/12/1/dingbutupian.png" alt="Historic gate at night" />
+      </div>
+      <div class="hero-overlay">
+        <div class="container hero-content">
+          <h1 class="hero-title">Bit stuff</h1>
+          <p class="hero-sub">we will put a sentence here </p>
+        </div>
+      </div>
+    </section>
 
-  <!-- PAGE 3 -->
-  <section class="page page3 inactive">
-    <div class="text-panel">
-        <h1 class="title-main">Media</h1>
-    <div class="divider"></div>
-    <p class="desc">Here are your videos, music links, and media content.</p>
+    <!-- SECTION 2: Circles row on warm band -->
+    <section id="section-2" class="section circles-band">
+      <div class="container circles-content">
+        <div class="rounded-strip">
+          <div class="circle-row">
+            <button class="circle-btn" aria-label="Feature 1">
+              <img src="images/12/2/2.png" alt="thumb 1">
+            </button>
+            <button class="circle-btn" aria-label="Feature 2">
+              <img src="images/12/2/1.png" alt="thumb 2">
+            </button>
+            <button class="circle-btn" aria-label="Feature 3">
+              <img src="images/12/2/1quan.webp" alt="thumb 3">
+            </button>
+            <button class="circle-btn" aria-label="Feature 4">
+              <img src="images/12/2/1quan.webp" alt="thumb 4">
+            </button>
+          </div>
 
-    <a href="#" class="fancy-btn">Watch Video</a>
-    <a href="#" class="fancy-btn">Listen Audio</a>
-    </div>
-    
-  </section>
+          <div class="circle-labels">
+            <div>BIT Stuff</div>
+            <div>BIT Stuff</div>
+            <div>BIT Stuff</div>
+            <div>BIT Stuff</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <!-- PAGE 4 -->
-  <section class="page page4 inactive">
-    <div class="text-panel">
-        <h1 class="title-main">Gallery</h1>
-    <div class="grid">
-      <div class="card">Artwork 1</div>
-      <div class="card">Artwork 2</div>
-      <div class="card">Artwork 3</div>
-    </div>
-    </div>
-  </section>
+    <!-- SECTION 3: Mid Feature / App mockups -->
+    <section id="section-3" class="section mid-feature">
+      <div class="container mid-inner">
+        <div class="left-mockups">
+          <!-- Replace with your phone mockups -->
+          <img src="images/12/1/phone1.png" alt="Phone mockup 1" class="phone phone-1">
+          <img src="images/12/1/phone2.png" alt="Phone mockup 2" class="phone phone-2">
+        </div>
 
-  <!-- PAGE 5 -->
-  <section class="page page5 inactive">
-    <div class="text-panel">
-        <h1 class="title-main">Contact</h1>
-    <p class="desc">
-      Final page — calm ending with contact details or social links.
-    </p>
-    </div>
-    
-  </section>
+        <div class="center-content">
+          <div class="decorative-frame">BIT Stuff</div>
+          <div class="lead-text">
+            <p> - replace this paragraph with the content describing your project, offerings, or mission. The large beige rectangle in the design is intended for a longer text or feature list.</p>
+          </div>
 
-  <script src="switch.js"></script>
+          <div class="three-buttons">
+            <button class="cta">BIT Stuff</button>
+            <button class="cta ghost">BIT Stuff</button>
+            <button class="cta">BIT Stuff</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: Product / Gallery carousel -->
+    <section id="section-4" class="section gallery">
+      <div class="container gallery-inner">
+        <h2 class="section-heading">产品</h2>
+        <div class="carousel" aria-roledescription="carousel">
+          <div class="carousel-track">
+            <!-- Replace these images with your product/gallery images -->
+            <div class="card"><img src="images/12/1/chanpin3.png" alt="product 1"></div>
+            <div class="card"><img src="images/12/1/chanpin2.png" alt="product 2"></div>
+            <div class="card"><img src="images/12/1/chanpin1.png" alt="product 3"></div>
+            <div class="card"><img src="images/12/2/2chanpin.png" alt="product 4"></div>
+            <div class="card"><img src="images/12/2/2chanpin.png" alt="product 5"></div>
+          </div>
+
+          <div class="carousel-controls">
+            <button id="prev" aria-label="Previous">◀</button>
+            <button id="next" aria-label="Next">▶</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: Footer / contact -->
+    <section id="section-5" class="section footer-section">
+      <div class="container footer-inner">
+        <div class="footer-grid">
+          <div class="footer-box">
+            <h3>联系我们</h3>
+            <p>Address / 电话 / 邮箱</p>
+          </div>
+          <div class="footer-box">
+            <h3>快速链接</h3>
+            <ul>
+              <li><a href="#">BIT Stuff</a></li>
+              <li><a href="#">BIT Stuff</a></li>
+              <li><a href="#">BIT Stuff</a></li>
+            </ul>
+          </div>
+          <div class="footer-box">
+            <h3 class="footer-h">关注我们</h3>
+            <p class="footer-p">Social icons / QR code</p>
+          </div>
+        </div>
+
+        <div class="copyright">
+          <small>© <span id="year"></span> Beijing Central Axis — All rights reserved</small>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
