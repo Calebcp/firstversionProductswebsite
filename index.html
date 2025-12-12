@@ -1,170 +1,290 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="zh-CN">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Beijing Central Axis — Landing</title>
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Montserrat:wght@300;600&display=swap"
-rel="stylesheet">
-
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>北京中轴线</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
 </head>
 <body>
-
-  <!-- Sticky header -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="brand">
-        <!-- Replace with your logo image if you have one -->
-        <img src="images/12/1/logo-with-text.png"  alt="Beijing Central Axis logo" class="logo">
-        <div class="brand-text">
-          <div class="chinese">北京中轴线</div>
-          <div class="english">BEIJING CENTRAL AXIS</div>
-        </div>
-      </div>
-
-      <nav class="top-nav" aria-label="Primary">
-        <a href="#section-1">BIT Stuff</a>
-        <a href="#section-2">BIT Stuff</a>
-        <a href="#section-3">BIT Stuff</a>
-        <a href="#section-4">BIT Stuff</a>
-        <a href="#section-5">BIT Stuff</a>
-      </nav>
+    <!-- -------------------------- Side Navigation Dots (Fixed) -------------------------- -->
+    <div class="side-nav-dots">
+        <div class="side-dot active" data-target="#section1"></div>
+        <div class="side-dot" data-target="#section2"></div>
+        <div class="side-dot" data-target="#section3"></div>
+        <div class="side-dot" data-target="#section4"></div>
+        <div class="side-dot" data-target="#section5"></div>
     </div>
-  </header>
 
-  <!-- Dot navigation -->
-  <div class="dot-nav" aria-hidden="false">
-    <button class="dot active" data-target="section-1" aria-label="Go to section 1"></button>
-    <button class="dot" data-target="section-2" aria-label="Go to section 2"></button>
-    <button class="dot" data-target="section-3" aria-label="Go to section 3"></button>
-    <button class="dot" data-target="section-4" aria-label="Go to section 4"></button>
-    <button class="dot" data-target="section-5" aria-label="Go to section 5"></button>
-  </div>
-
-  <main>
-
-    <!-- SECTION 1: Hero (Header + big image) -->
-    <section id="section-1" class="section hero">
-      <div class="hero-image" role="img" aria-label="Historic gate at night (hero image)">
-        <!-- Replace hero.jpg with your actual hero banner image -->
-        <img src="images/12/1/dingbutupian.png" alt="Historic gate at night" />
-      </div>
-      <div class="hero-overlay">
-        <div class="container hero-content">
-          <h1 class="hero-title">Bit stuff</h1>
-          <p class="hero-sub">we will put a sentence here </p>
+    <!-- -------------------------- Section 1: Home -------------------------- -->
+    <section class="section section1" id="section1">
+        <div class="header">
+            <div class="logo">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 50 50'%3E%3Crect width='50' height='50' fill='%238a6d48'/%3E%3Ctext x='12' y='30' font-size='20' fill='white' font-weight='bold'%3E中轴%3C/text%3E%3C/svg%3E" alt="logo">
+                <div class="logo-text">
+                    <h1>北京中轴线</h1>
+                    <p>BEIJING CENTRAL AXI</p>
+                </div>
+            </div>
+            <img class="search-icon" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpath d='M15.5 14h-.79l-.28-.27a6.5 6.5 0 0 0 1.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 0 0-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 0 0 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z' fill='%238a6d48'/%3E%3C/svg%3E" alt="search">
+            <nav class="nav">
+                <a href="#section1" class="active">首页</a>
+                <a href="#section2">中轴线</a>
+                <a href="#section4">文创App</a>
+                <a href="#section3">文创产品</a>
+                <a href="#section5">关于我们</a>
+            </nav>
         </div>
-      </div>
+        <div class="content">
+            
+            <div class="right-panel">
+                <img class="building-img" src="/第一页/1/画板 1.png" alt="钟楼"> 
+                <div class="decor"></div>
+            </div>
+        </div>
+        <div class="global-footer">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Crect width='30' height='30' fill='%238a6d48'/%3E%3Ctext x='8' y='20' font-size='12' fill='white' font-weight='bold'%3E中轴%3C/text%3E%3C/svg%3E" alt="logo">
+            <span>北京中轴线 BEIJING CENTRAL AXI</span>
+        </div>
     </section>
 
-    <!-- SECTION 2: Circles row on warm band -->
-    <section id="section-2" class="section circles-band">
-      <div class="container circles-content">
-        <div class="rounded-strip">
-          <div class="circle-row">
-            <button class="circle-btn" aria-label="Feature 1">
-              <img src="images/12/2/2.png" alt="thumb 1">
-            </button>
-            <button class="circle-btn" aria-label="Feature 2">
-              <img src="images/12/2/1.png" alt="thumb 2">
-            </button>
-            <button class="circle-btn" aria-label="Feature 3">
-              <img src="images/12/2/1quan.webp" alt="thumb 3">
-            </button>
-            <button class="circle-btn" aria-label="Feature 4">
-              <img src="images/12/2/1quan.webp" alt="thumb 4">
-            </button>
-          </div>
-
-          <div class="circle-labels">
-            <div>BIT Stuff..</div>
-            <div>BIT Stuff..</div>
-            <div>BIT Stuff..</div>
-            <div>BIT Stuff..</div>
-          </div>
+    <!-- -------------------------- Section 2: Central Axis -------------------------- -->
+    <section class="section section2" id="section2">
+        <div class="header2">
+            <div class="logo">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 50 50'%3E%3Crect width='50' height='50' fill='%238a6d48'/%3E%3Ctext x='12' y='30' font-size='20' fill='white' font-weight='bold'%3E中轴%3C/text%3E%3C/svg%3E" alt="logo">
+                <div class="logo-text1">
+                    <h1>北京中轴线</h1>
+                    <p>BEIJING CENTRAL AXI</p>
+                </div>
+            </div>
+            <img class="search-icon" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpath d='M15.5 14h-.79l-.28-.27a6.5 6.5 0 0 0 1.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 0 0-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 0 0 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z' fill='%238a6d48'/%3E%3C/svg%3E" alt="search">
+            <nav class="nav2">
+                <a href="#section1">首页</a>
+                <a href="#section2" class="active">中轴线</a>
+                <a href="#section4">文创App</a>
+                <a href="#section3">文创产品</a>
+                <a href="#section5">关于我们</a>
+            </nav>
         </div>
-      </div>
+        <div class="content">
+            <!-- Vertical Left Navigation (Unique to Section 2) -->
+            <div class="vertical-nav"> 
+                <a href="#section2" class="active">首页</a>
+                <a href="#section2">中轴线</a>
+                <a href="#section3">文创产品</a>
+                <a href="#section4">文创App</a>
+            </div> 
+            <div class="main-content">
+                <!--<img class="building-img" src="" alt="钟楼"> -->
+                <div class="axis-line"></div>
+                <div class="axis-dot" style="top: 50px;"></div>
+                <div class="axis-item left">
+                    <h3>钟鼓楼 (The Bell and Drum Towers)<br>轴线关系：北端起点 (The Northern Terminus)</h3>
+                    <p>建筑身份：古都的时间总控中心。位于中轴线的最北端，前楼后鼓。它们曾在七百年的时光里以“暮鼓晨钟”控制着整座城市的作息脉搏，是古都秩序的收束点。</p>
+                    <img src="building11.png"   alt="钟鼓楼">
+                </div>
+                <div class="axis-dot" style="top: 200px;"></div>
+                <div class="axis-item right">
+                    <h3>故宫 (The Forbidden City)<br>轴线关系：核心高潮 (The Sovereign Core)</h3>
+                    <p>建筑身份：世界上最大的皇宫建筑群。中轴线在此达到极致的辉煌。轴线笔直穿过太和殿的龙椅，所有的建筑都以此为中心左右严格对称，彰显着“皇权至上”的统领地位。</p>
+                    <img src="building22.png" alt="故宫">
+                </div>
+                <div class="axis-dot" style="top: 350px;"></div>
+                <div class="axis-item left">
+                    <h3>天安门 (Tiananmen)<br>轴线关系：皇城正门 (The Imperial Portal)</h3>
+                    <p>建筑身份：颁布诏令与举行大典的政治舞台。连接皇宫与民间的重要枢纽。它坐落在中轴线的黄金分割点上，承载着国家最高的礼仪威严，是通往权力中心的宏大门户。</p>
+                    <img src="building33.png" alt="天安门">
+                </div>
+                <div class="axis-dot" style="top: 500px;"></div>
+                <div class="axis-item right">
+                    <h3>永定门 (Yongding Gate)<br>轴线关系：南端起点 (The Southern Origin)</h3>
+                    <p>建筑身份：北京外城正南门。中轴线南行的起始标志，寓意“永远安定”。它如同一枚巨大的句点，确立了中轴线长达7.8公里的壮阔尺度，由此北望，秩序井然。</p>
+                    <img src="building44.png" alt="永定门">
+                </div>
+            </div>
+        </div>
+        <div class="global-footer">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Crect width='30' height='30' fill='%238a6d48'/%3E%3Ctext x='8' y='20' font-size='12' fill='white' font-weight='bold'%3E中轴%3C/text%3E%3C/svg%3E" alt="logo">
+            <span>北京中轴线 BEIJING CENTRAL AXI</span>
+        </div>
     </section>
 
-    <!-- SECTION 3: Mid Feature / App mockups -->
-    <section id="section-3" class="section mid-feature">
-      <div class="container mid-inner">
-        <div class="left-mockups">
-          <!-- Replace with your phone mockups -->
-          <img src="images/12/1/phone1.png" alt="Phone mockup 1" class="phone phone-1">
-          <img src="images/12/1/phone2.png" alt="Phone mockup 2" class="phone phone-2">
+    <!-- -------------------------- Section 3: Cultural Products -------------------------- -->
+    <section class="section section3" id="section3">
+        <div class="header3">
+            <div class="logo">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 50 50'%3E%3Crect width='50' height='50' fill='%238a6d48'/%3E%3Ctext x='12' y='30' font-size='20' fill='white' font-weight='bold'%3E中轴%3C/text%3E%3C/svg%3E" alt="logo">
+                <div class="logo-text3">
+                    <h1>北京中轴线</h1>
+                    <p>BEIJING CENTRAL AXI</p>
+                </div>
+            </div>
+            <img class="search-icon" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpath d='M15.5 14h-.79l-.28-.27a6.5 6.5 0 0 0 1.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 0 0-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 0 0 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z' fill='%238a6d48'/%3E%3C/svg%3E" alt="search">
+            <nav class="nav3
+                <a href="#section1">首页</a>
+                <a href="#section2">中轴线</a>
+                <a href="#section4">文创App</a>
+                <a href="#section3" class="active">文创产品</a>
+                <a href="#section5">关于我们</a>
+            </nav>
         </div>
-
-        <div class="center-content">
-          <div class="decorative-frame">BIT Stuff..</div>
-          <div class="lead-text">
-            <p> - replace this paragraph with the content describing your project, offerings, or mission. The large beige rectangle in the design is intended for a longer text or feature list.</p>
-          </div>
-
-          <div class="three-buttons">
-            <button class="cta">BIT Stuff..</button>
-            <button class="cta ghost">BIT Stuff..</button>
-            <button class="cta">BIT Stuff..</button>
-          </div>
+        <div class="content">
+            <div class="left-panel">
+                <h2>中轴线概览</h2>
+                <button class="btn">查看更多</button>
+                 <div class="buildings">
+                    <img src="ye305.png" alt="建筑1">
+                    <img src="ye302.png" alt="建筑2">
+                     
+                </div>
+                <div class="buildings">
+                    <img src="ye301.png" alt="建筑1">
+                    <img src="ye302.png" alt="建筑2">
+                    <img src="ye303.png" alt="建筑3">
+                    <img src="ye304.png" alt="建筑4">
+                    <img src="ye305.png" alt="建筑5">
+                    <img src="ye306.png" alt="建筑6">
+                </div>
+            </div>
+            <div class="right-panel">
+                <h3>古都七百年的时空秩序</h3>
+                <p>北起钟鼓楼，南至永定门，全长7.8公里。它是世界上现存最长、保存最完整的古代城市轴线。这条“脊梁”始建于元代，成型于明清，历经七百余时光。它以严谨的对称布局，统领着北京城的空间秩序，将皇家宫苑、祭祀坛庙与市井街巷有机串联，展现了中国传统文化中“中正平和、天人合一”的最高都城理想。</p>
+                <div class="placeholders">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
         </div>
-      </div>
+        <div class="global-footer">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Crect width='30' height='30' fill='%238a6d48'/%3E%3Ctext x='8' y='20' font-size='12' fill='white' font-weight='bold'%3E中轴%3C/text%3E%3C/svg%3E" alt="logo">
+            <span>北京中轴线 BEIJING CENTRAL AXI</span>
+        </div>
     </section>
 
-    <!-- SECTION 4: Product / Gallery carousel -->
-    <section id="section-4" class="section gallery">
-      <div class="container gallery-inner">
-        <h2 class="section-heading">产品</h2>
-        <div class="carousel" aria-roledescription="carousel">
-          <div class="carousel-track">
-            <!-- Replace these images with your product/gallery images -->
-            <div class="card"><img src="images/12/1/chanpin3.png" alt="product 1"></div>
-            <div class="card"><img src="images/12/1/chanpin2.png" alt="product 2"></div>
-            <div class="card"><img src="images/12/1/chanpin1.png" alt="product 3"></div>
-            <div class="card"><img src="images/12/2/2chanpin.png" alt="product 4"></div>
-            <div class="card"><img src="images/12/2/2chanpin.png" alt="product 5"></div>
-          </div>
-
-          <div class="carousel-controls">
-            <button id="prev" aria-label="Previous">◀</button>
-            <button id="next" aria-label="Next">▶</button>
-          </div>
+    <!-- -------------------------- Section 4: Cultural App -------------------------- -->
+    <section class="section section4" id="section4">
+        <div class="header4">
+            <div class="logo">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 50 50'%3E%3Crect width='50' height='50' fill='%238a6d48'/%3E%3Ctext x='12' y='30' font-size='20' fill='white' font-weight='bold'%3E中轴%3C/text%3E%3C/svg%3E" alt="logo">
+                <div class="logo-text4">
+                    <h1>北京中轴线</h1>
+                    <p>BEIJING CENTRAL AXI</p>
+                </div>
+            </div>
+            <img class="search-icon" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpath d='M15.5 14h-.79l-.28-.27a6.5 6.5 0 0 0 1.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 0 0-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 0 0 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z' fill='%238a6d48'/%3E%3C/svg%3E" alt="search">
+            <nav class="nav4">
+                <a href="#section1">首页</a>
+                <a href="#section2">中轴线</a>
+                <a href="#section4" class="active">文创App</a>
+                <a href="#section3">文创产品</a>
+                <a href="#section5">关于我们</a>
+            </nav>
         </div>
-      </div>
+        <div class="content">
+            <h2>中轴·雅集</h2>
+            <div class="products">
+                <img src="ye402.png" alt="文创1">
+                <img src="ye401.png" alt="文创2">
+                <img src="ye403.png" alt="文创3">
+            </div>
+            <p>将七百年的建筑美学融入日常生活，让古老的秩序在您的指尖复活。无论是挑战平衡、复刻古都天际线的中轴保护教育概念的堆叠游戏，还是演绎红墙黄瓦色彩美学的四色跳棋，亦或是源自中轴线建筑的屋檐层叠形态为的多功能照明餐具，每一件文创产品都是对中轴线历史温度的现代重构。我们邀请您通过触碰与感知，把这座城市的脊梁带回家。</p>
+        </div>
+        <div class="global-footer">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Crect width='30' height='30' fill='%238a6d48'/%3E%3Ctext x='8' y='20' font-size='12' fill='white' font-weight='bold'%3E中轴%3C/text%3E%3C/svg%3E" alt="logo">
+            <span>北京中轴线 BEIJING CENTRAL AXI</span>
+        </div>
     </section>
 
-    <!-- SECTION 5: Footer / contact -->
-    <section id="section-5" class="section footer-section">
-      <div class="container footer-inner">
-        <div class="footer-grid">
-          <div class="footer-box">
-            <h3>联系我们</h3>
-            <p>Address / 电话 / 邮箱</p>
-          </div>
-          <div class="footer-box">
-            <h3>快速链接</h3>
-            <ul>
-              <li><a href="#">BIT Stuff</a></li>
-              <li><a href="#">BIT Stuff</a></li>
-              <li><a href="#">BIT Stuff</a></li>
-            </ul>
-          </div>
-          <div class="footer-box">
-            <h3 class="footer-h">关注我们</h3>
-            <p class="footer-p">Social icons / QR code</p>
-          </div>
+    <!-- -------------------------- Section 5: About Us -------------------------- -->
+    <section class="section section5" id="section5">
+        <div class="header5">
+            <div class="logo">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 50 50'%3E%3Crect width='50' height='50' fill='%238a6d48'/%3E%3Ctext x='12' y='30' font-size='20' fill='white' font-weight='bold'%3E中轴%3C/text%3E%3C/svg%3E" alt="logo">
+                <div class="logo-text5">
+                    <h1>北京中轴线</h1>
+                    <p>BEIJING CENTRAL AXI</p>
+                </div>
+            </div>
+            <img class="search-icon" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpath d='M15.5 14h-.79l-.28-.27a6.5 6.5 0 0 0 1.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 0 0-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 0 0 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z' fill='%238a6d48'/%3E%3C/svg%3E" alt="search">
+            <nav class="nav5">
+                <a href="#section1">首页</a>
+                <a href="#section2">中轴线</a>
+                <a href="#section4">文创App</a>
+                <a href="#section3">文创产品</a>
+                <a href="#section5" class="active">关于我们</a>
+            </nav>
         </div>
-
-        <div class="copyright">
-          <small>© <span id="year"></span> Beijing Central Axis — All rights reserved</small>
+        <div class="content">
+            <h2>热门文创App</h2>
+            <div class="apps">
+                <div class="app-item">
+                    <h3>中轴·行迹 (City Walk 导览)</h3>
+                    <p>唤醒沉睡的历史，开启一场穿越7.8公里的时空漫步。这款AR实景导览应用为您规划最佳探索路线，通过增强现实技术让古迹在屏幕中“复活”。从寻找隐秘的镇水兽到聆听地标背后的故事，用脚步丈量古都脊梁，发现红墙黄瓦下不一样的北京。</p>
+                    <div class="screenshots">
+                        <img src="ye501.png" alt="App截图1">
+                        <img src="ye502.png" alt="App截图2">
+                    </div>
+                </div>
+                <div class="app-item">
+                    <h3>心境·轴线 (情绪记录)</h3>
+                    <p>在宏大的城市秩序中，安放您的微观心绪。我们将中轴线的建筑美学转化为独特的情绪色谱——红墙的炽热、琉璃的宁静、汉白玉的纯粹。记录当下的喜怒哀乐，将其投射为虚拟中轴上的光影变幻，让古老的秩序与美感治愈您的每一天。</p>
+                    <div class="screenshots">
+                        <img src="ye503.png" alt="App截图3">
+                        <img src="ye504.png" alt="App截图4">
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+        <div class="global-footer">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Crect width='30' height='30' fill='%238a6d48'/%3E%3Ctext x='8' y='20' font-size='12' fill='white' font-weight='bold'%3E中轴%3C/text%3E%3C/svg%3E" alt="logo">
+            <span>北京中轴线 BEIJING CENTRAL AXI</span>
+        </div>
     </section>
 
-  </main>
+    <!-- -------------------------- Script for Side Dots & Active States -------------------------- -->
+    <script>
+        // Update side dots and nav links on scroll
+        const sections = document.querySelectorAll('.section');
+        const sideDots = document.querySelectorAll('.side-dot');
+        const navLinks = document.querySelectorAll('.header .nav a');
 
-  <script src="script.js"></script>
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            // Update side dots
+            sideDots.forEach(dot => {
+                dot.classList.remove('active');
+                if (dot.getAttribute('data-target') === `#${current}`) {
+                    dot.classList.add('active');
+                }
+            });
+
+            // Update nav links
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Side dot click handler
+        sideDots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                const target = dot.getAttribute('data-target');
+                document.querySelector(target).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
 </body>
 </html>
