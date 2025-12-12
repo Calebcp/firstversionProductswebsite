@@ -544,183 +544,428 @@ body, html {
 }
 /**/
 /* Tablet (768px and below) */
-@media (max-width: 768px) {
-  /* Adjust Section Padding */
-  .section {
-      padding: 15px 20px;
-  }
-
-  /* Side Dots: Move to bottom for mobile */
-  .side-nav-dots {
-      flex-direction: row;
-      top: auto;
-      bottom: 20px;
-      right: 50%;
-      transform: translateX(50%);
-      gap: 20px;
-  }
-
-  /* Header: Stack logo and nav */
-  .header {
-      flex-wrap: wrap;
-      gap: 10px;
-  }
-
-  .header .nav {
-      margin-left: 0;
-      width: 100%;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 10px;
-  }
-
-  .header .nav a {
-      font-size: 14px;
-  }
-
-  /* Section 1: Adjust title size */
-  .section1 .left-panel .title {
-      font-size: 40px;
-      margin: 20px 0 0 20px;
-  }
-
-  .section1 .left-panel .title-en {
-      font-size: 18px;
-      top: 80px;
-      right: 20px;
-  }
-
-  /* Section 2: Vertical Nav to Top */
-  .section2 {
-      padding-right: 0;
-  }
-
-  .section2 .content {
-      flex-direction: column;
-  }
-
-  .section2 .vertical-nav {
-      width: 100%;
-      height: auto;
-      flex-direction: row;
-      padding: 10px 20px;
-      gap: 20px;
-      justify-content: center;
-  }
-
-  .section2 .main-content {
-      width: 100%;
-      height: calc(100% - 60px);
-  }
-
-  .section2 .axis-item {
-      width: 100%;
-      text-align: center;
-      padding: 0 10px;
-  }
-
-  .section2 .axis-item.left, .section2 .axis-item.right {
-      text-align: center;
-      margin-left: 0;
-  }
-
-  .section2 .axis-item img {
-      width: 120px;
-      height: 120px;
-  }
-
-  /* Section 3: Stack Panels */
-  .section3 .content {
-      flex-direction: column;
-  }
-
-  .section3 .left-panel, .section3 .right-panel {
-      width: 100%;
-      height: 50%;
-  }
-
-  .section3 .left-panel .buildings {
-      justify-content: center;
-  }
-
-  .section3 .right-panel .placeholders {
-      justify-content: center;
-      gap: 15px;
-  }
-
-  .section3 .right-panel .placeholders div {
-      width: 80px;
-      height: 100px;
-  }
-
-  /* Section 4: Adjust Product Images */
-  .section4 .products {
-      flex-wrap: wrap;
-      gap: 20px;
-  }
-
-  .section4 .products img {
-      width: 150px;
-  }
-
-  .section4 .content p {
-      padding: 0 20px;
-  }
-
-  /* Section 5: Stack App Items */
-  .section5 .apps {
-      flex-direction: column;
-      gap: 30px;
-      padding: 0 20px;
-  }
-
-  .section5 .app-item {
-      width: 100%;
-  }
-
-  .section5 .app-item .screenshots {
-      justify-content: center;
-  }
-
-  .section5 .app-item .screenshots img {
-      width: 120px;
-  }
-
-  /* Fix Axis Line for Mobile */
-  .section2 .axis-line {
-      display: none; /* Hide for mobile (better UX) */
-  }
+/* -------------------------- BASE RESPONSIVE RESETS -------------------------- */
+/* Ensure mobile viewport is properly sized (critical for iPhones) */
+meta {
+    viewport-fit: cover; /* Fix notch issues on iPhone X+/12+/15+ */
 }
 
-/* Mobile (480px and below) */
+/* Prevent text overflow and ensure proper word wrapping */
+* {
+    word-wrap: break-word;
+    hyphens: auto; /* Improve text wrapping on small screens */
+}
+
+/* -------------------------- MEDIA QUERY: TABLET & MOBILE (768px and below) -------------------------- */
+@media (max-width: 768px) {
+    /* Global Section Fixes */
+    .section {
+        padding: 15px 20px !important;
+        height: auto !important; /* Let sections expand to fit content (fixes overflow) */
+        min-height: 100vh; /* Keep full-screen feel but allow content to flow */
+        scroll-snap-align: start;
+    }
+
+    /* Side Dots: Mobile-Friendly Bottom Placement (iPhone Notch Safe) */
+    .side-nav-dots {
+        flex-direction: row;
+        top: auto;
+        bottom: 30px; /* Add space for iPhone home indicator/notch */
+        right: 50%;
+        transform: translateX(50%);
+        gap: 20px;
+        z-index: 9999;
+    }
+
+    .side-dot {
+        width: 14px;
+        height: 14px; /* Larger touch target for mobile */
+    }
+
+    /* Header: Stacked & Touch-Friendly */
+    .header {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 10px 0; /* Add padding for better touch */
+    }
+
+    .header .logo {
+        width: 100%;
+        justify-content: center; /* Center logo on mobile */
+    }
+
+    .header .logo img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .header .search-icon {
+        display: none; /* Hide search icon on mobile (save space) */
+    }
+
+    .header .nav {
+        margin-left: 0;
+        width: 100%;
+        justify-content: center;
+        gap: 15px; /* Smaller gap for mobile */
+        margin-top: 10px;
+        flex-wrap: wrap; /* Wrap nav links if they overflow */
+    }
+
+    .header .nav a {
+        font-size: 14px;
+        padding: 5px 8px; /* Larger touch target */
+    }
+
+    /* -------------------------- Section 1: Landing Page (iPhone Optimized) -------------------------- */
+    .section1 .content {
+        flex-direction: column;
+        height: auto !important;
+        min-height: calc(100vh - 90px);
+    }
+
+    .section1 .left-panel {
+        width: 100%;
+        position: relative; /* Remove absolute to fix overlay issues */
+        z-index: 2;
+        padding: 20px 0;
+        background-color: rgba(240, 235, 228, 0.9); /* Semi-transparent background for readability */
+    }
+
+    .section1 .left-panel .title {
+        font-size: clamp(2.5rem, 10vw, 4rem); /* Responsive font size (scales with screen) */
+        margin: 10px 0 0 10px;
+        line-height: 1.1;
+        text-align: center; /* Center title on mobile */
+    }
+
+    .section1 .left-panel .title-en {
+        font-size: clamp(1rem, 4vw, 1.5rem);
+        top: auto;
+        bottom: 20px;
+        right: 50%;
+        transform: translateX(50%) rotate(-15deg); /* Center subtitle */
+    }
+
+    .section1 .right-panel {
+        width: 100%;
+        height: 50vh; /* Smaller image height on mobile */
+        position: relative;
+        z-index: 1;
+    }
+
+    .section1 .right-panel .decor {
+        width: 100px;
+        height: 100px; /* Smaller decor on mobile */
+        top: 10px;
+        right: 10px;
+    }
+
+    /* -------------------------- Section 2: Central Axis (Fix Overlapping Content) -------------------------- */
+    .section2 {
+        padding-right: 0 !important;
+        background-image: url("images/背景.png") !important;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        min-height: 100vh;
+    }
+
+    .section2 .content {
+        flex-direction: column;
+        height: auto !important;
+        gap: 20px;
+    }
+
+    .section2 .vertical-nav {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        padding: 10px 20px;
+        gap: 15px;
+        justify-content: center;
+        background-color: rgba(224, 211, 178, 0.9); /* Semi-transparent for readability */
+    }
+
+    .section2 .main-content {
+        width: 100%;
+        height: auto !important;
+        flex-direction: column;
+        gap: 30px;
+        padding: 20px 0;
+    }
+
+    .section2 .axis-line {
+        display: none; /* Hide axis line on mobile */
+    }
+
+    .section2 .axis-item {
+        width: 100% !important;
+        text-align: center !important;
+        padding: 0 15px !important;
+        margin-top: 0 !important;
+    }
+
+    .section2 .axis-item h3 {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .section2 .axis-item p {
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 15px;
+    }
+
+    .section2 .axis-item img {
+        width: clamp(100px, 40vw, 180px) !important;
+        height: auto !important; /* Maintain aspect ratio (fixes stretched images) */
+        margin: 0 auto 15px auto !important;
+        display: block; /* Center images */
+    }
+
+    /* -------------------------- Section 3: Cultural Products (Fix Stacked Panels) -------------------------- */
+    .section3 .content {
+        flex-direction: column;
+        height: auto !important;
+        gap: 20px;
+    }
+
+    .section3 .left-panel {
+        width: 100%;
+        height: auto !important;
+        padding: 20px;
+    }
+
+    .section3 .left-panel h2 {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .section3 .left-panel .btn {
+        display: block;
+        margin: 0 auto 20px auto; /* Center button */
+    }
+
+    .section3 .left-panel .buildings {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .section3 .left-panel .buildings img {
+        width: clamp(80px, 20vw, 100px);
+        height: auto;
+    }
+
+    .section3 .right-panel {
+        width: 100%;
+        height: auto !important;
+        padding: 20px;
+    }
+
+    .section3 .right-panel h3 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .section3 .right-panel p {
+        font-size: 14px;
+        padding: 0 10px;
+        margin-bottom: 20px;
+    }
+
+    .section3 .right-panel .placeholders {
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap; /* Wrap placeholders if they overflow */
+    }
+
+    .section3 .right-panel .placeholders div {
+        width: clamp(80px, 25vw, 120px);
+        height: clamp(100px, 30vw, 150px);
+    }
+
+    /* -------------------------- Section 4: Cultural App (Fix Product Images) -------------------------- */
+    .section4 .content {
+        height: auto !important;
+        padding: 20px 10px;
+    }
+
+    .section4 .content h2 {
+        font-size: 24px;
+    }
+
+    .section4 .products {
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+    }
+
+    .section4 .products img {
+        width: clamp(120px, 45vw, 220px);
+        height: auto;
+    }
+
+    .section4 .content p {
+        padding: 0 15px !important;
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    /* -------------------------- Section 5: About Us (Fix App Items) -------------------------- */
+    .section5 .content {
+        height: auto !important;
+        padding: 20px 10px;
+    }
+
+    .section5 .content h2 {
+        font-size: 24px;
+        white-space: nowrap; /* Prevent title from breaking */
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .section5 .content h2::before,
+    .section5 .content h2::after {
+        content: "------"; /* Shorter lines on mobile */
+    }
+
+    .section5 .apps {
+        flex-direction: column;
+        gap: 30px;
+        padding: 0 15px;
+    }
+
+    .section5 .app-item {
+        width: 100%;
+    }
+
+    .section5 .app-item h3 {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .section5 .app-item p {
+        font-size: 14px;
+        line-height: 1.6;
+        padding: 0 10px;
+    }
+
+    .section5 .app-item .screenshots {
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .section5 .app-item .screenshots img {
+        width: clamp(100px, 35vw, 150px);
+        height: auto;
+    }
+}
+
+/* -------------------------- MEDIA QUERY: SMALL MOBILE (iPhone SE/480px and below) -------------------------- */
 @media (max-width: 480px) {
-  .header .logo img {
-      width: 40px;
-      height: 40px;
-  }
+    /* Further optimize for small iPhones (4/SE/5) */
+    .header .logo img {
+        width: 40px;
+        height: 40px;
+    }
 
-  .section1 .left-panel .title {
-      font-size: 30px;
-  }
+    .header .nav {
+        gap: 10px;
+    }
 
-  .section4 .products img {
-      width: 120px;
-  }
+    .header .nav a {
+        font-size: 12px;
+    }
 
-  .section5 .content h2::before,
-  .section5 .content h2::after {
-      content: "--------";
-  }
-  .section-container {
-      height: 100vh;
-      overflow-y: scroll;
-      scroll-snap-type: y mandatory;
-  }
-  .section2 {
-  background-image: url("images/背景.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  padding-right: 230px;
-  }
+    .section1 .left-panel .title {
+        font-size: clamp(2rem, 8vw, 3rem);
+    }
+
+    .section2 .vertical-nav {
+        gap: 10px;
+        padding: 10px 15px;
+    }
+
+    .section2 .vertical-nav a {
+        font-size: 14px;
+    }
+
+    .section4 .products img {
+        width: clamp(100px, 40vw, 180px);
+    }
+
+    .section5 .content h2::before,
+    .section5 .content h2::after {
+        content: "----"; /* Even shorter lines */
+    }
+
+    .section5 .app-item .screenshots img {
+        width: clamp(80px, 30vw, 120px);
+    }
+
+    /* Fix for iPhone Notch (safe area) */
+    .section {
+        padding-top: env(safe-area-inset-top) !important;
+        padding-bottom: env(safe-area-inset-bottom) !important;
+    }
+
+    .side-nav-dots {
+        bottom: calc(20px + env(safe-area-inset-bottom)); /* Avoid home indicator */
+    }
+}
+
+/* -------------------------- MEDIA QUERY: IPHONE LANDSCAPE (Fix Horizontal Overflow) -------------------------- */
+@media (max-height: 500px) and (orientation: landscape) {
+    /* Optimize for iPhone landscape mode */
+    .section1 .right-panel {
+        height: 70vh;
+    }
+
+    .section2 .main-content {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .section2 .axis-item {
+        width: 45% !important;
+    }
+
+    .section4 .products img {
+        width: 120px;
+    }
+}
+
+/* -------------------------- GLOBAL MOBILE FIXES -------------------------- */
+/* Prevent image overflow and maintain aspect ratio */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Fix inline image spacing */
+}
+
+/* Fix for scroll container on mobile */
+.section-container {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+/* Touch-friendly hover effects (disable on mobile) */
+@media (hover: none) {
+    * {
+        transition: none !important;
+    }
+
+    .header .nav a:hover {
+        transform: none;
+        color: #8a6d48;
+    }
+
+    .section2 .axis-item img:hover {
+        transform: none;
+    }
 }
